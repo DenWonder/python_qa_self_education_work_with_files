@@ -1,3 +1,4 @@
+import os
 import time
 
 import requests
@@ -28,10 +29,10 @@ def test_text_in_downloaded_file():
     download_url = browser.element("[data-testid='1773699745156_DNDAgentFile.txt']").get(query.attribute("href"))
 
     content = requests.get(url=download_url).content
-    with open("tmp/sample2.txt", "wb") as file:
+    with open(os.path.join(TMP_DIR, "sample2.txt"), "wb") as file:
         file.write(content)
 
-    with open("tmp/sample2.txt", "r") as file:
+    with open(os.path.join(TMP_DIR, "sample2.txt"), "r") as file:
         a = file.read()
         assert "test" in a
 

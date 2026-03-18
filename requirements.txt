@@ -1,2 +1,6 @@
 selene==2.0.0rc4
 selenium==4.15.2
+pypdf
+pytest
+openpyxl
+xlrd
